@@ -22,7 +22,6 @@ export default [
       'cypress/no-pause': 'error', // Impede o uso de cy.pause()
       'cypress/no-assigning-return-values': 'error', // Evita atribuir retornos do Cypress a variáveis
       'cypress/no-async-tests': 'error', // Impede o uso de funções assíncronas nos testes
-      'cypress/no-force': 'error', // Evita o uso da opção { force: true } nos comandos do Cypress
 
       // Regras gerais de boas práticas
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
