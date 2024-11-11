@@ -1,9 +1,13 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from "cypress";
+import { allureCypress } from "allure-cypress/reporter";
 
-module.exports = defineConfig({
+export default defineConfig({
   e2e: {
-    setupNodeEvents(_on, _config) {
-      // implement node event listeners here
+    setupNodeEvents(on, config) {
+      allureCypress(on, config, {
+        resultsDir: "allure-results", // Diretório onde os resultados serão armazenados
+      });
+      return config;
     },
   },
 });
