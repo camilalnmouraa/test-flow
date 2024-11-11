@@ -1,48 +1,47 @@
-# Anagram
+# Carrinho de Compras com Cupons de Desconto
 
-Sample project with a [`isAnagram`](./index.js) function, which:
+Projeto de automação para a funcionalidade de [`aplicação de cupons de desconto`](./index.js) no carrinho de compras, que:
 
-- Accepts two words as inputs
-- And returns true if the second word is the anagram of the first, and false otherwise
+- Aceita um cupom válido de desconto como entrada.
+- Calcula o valor total da compra aplicando o desconto correspondente.
+- Retorna o valor atualizado da compra e valida o cálculo para diferentes tipos de cupons.
 
-> **Note:** An anagram is a word, phrase, or sentence formed from another by rearranging its letters (e.g., “Angel” is an anagram of “glean”.)
+> **Note:** A funcionalidade de cupons de desconto permite aplicar benefícios aos clientes durante o processo de compra, especialmente em datas comerciais de grande volume, como a Black Friday.
 
-## Pre-requirements
+## Pré-requisitos
 
-It is required to have nodejs and npm installed to run this project.
+É necessário ter o Node.js e o npm instalados para executar este projeto.
 
-> I used versions `v14.17.3` and `6.14.13` of nodejs and npm, respectively. I suggest you use the same or later versions.
+> Neste projeto foram utilizadas as versões `v20.14.0` para o Node.js e `10.7.0` para o npm. Recomenda-se o uso das mesmas ou versões mais recentes.
 
-## Installation
+## Instalação
 
-Run `npm install` (or `npm i` for the short version) to install the dev dependencies.
+Execute `npm install` to install the dev dependencies.
 
-## Tests
+## Testes
 
-Run `npm test` (or `npm t` for the short version) to run the unit tests.
+Execute  `npm test` para rodar os testes automatizados.
 
-> After running the tests, you should see a result like this:
+> Após rodar os testes, o resultado esperado deve ser semelhante a este:
 
 ```sh
-> mocha
+> javascript
 
+  aplicaçãoDeCupons
+    ✔ deve retornar o valor correto com o cupom de 30 reais aplicado
+    ✔ deve retornar o valor correto com o cupom de 10% de desconto aplicado
+    ✔ deve retornar o valor correto com o cupom de frete grátis aplicado
 
-
-  isAnagram
-    ✔ should return true if the two strings are anagrams
-    ✔ should return false if the two strings are not anagrams
-    ✔ should return true if the two strings are anagram sentences
-    ✔ should return true if the two strings are the same
-    ✔ should return false if the two strings have different length (spaces in between the second param)
-    ✔ should return true if the two strings are anagrams (case-insensitive)
-    ✔ should throw an error if the provided arguments are not strings
-    ✔ should throw an error if the second argument is not a string
-    ✔ should throw an error if no arguments are provided
-
-
-  9 passing (7ms)
+  3 passing (7ms)
 ```
+
+## Cenário Automatizado Inicial
+
+O primeiro cenário de teste automatizado, do tipo "outline", inclui a validação de cupons válidos existentes na base de dados. Os cupons testados serão:
+- 30REAIS: Aplica um desconto fixo de R$30,00
+- 10OFF: Aplica um desconto de 10% sobre o valor total da compra
+- FRETEGRATIS: Elimina o custo do frete na compra
 
 ___
 
-This project was created with 🤍 by [Camila Moura](https://linkedin.com/in/camilalnmoura).
+This project was created with 🤍 and ☕ by Camila Moura. by [Camila Moura](https://linkedin.com/in/camilalnmoura).
