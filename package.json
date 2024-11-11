@@ -1,15 +1,22 @@
 {
   "name": "test-flow-website-cypress",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
+  "main": "cypress.config.js",
   "scripts": {
+    "lint": "eslint cypress/**/*.js && eslint cypress.config.js",
+    "lint:fix": "eslint cypress/**/*.js --fix && eslint cypress.config.js --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Camila Moura <moura.camilaluiza@gmail.com>",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "cypress": "^13.15.2"
+    "@eslint/js": "^9.14.0",
+    "cypress": "^13.15.2",
+    "eslint": "^9.14.0",
+    "eslint-plugin-cypress": "^4.1.0",
+    "globals": "^15.12.0"
   }
 }
