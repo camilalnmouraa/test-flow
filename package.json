@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint cypress/**/*.js && eslint cypress.config.js",
     "lint:fix": "eslint cypress/**/*.js --fix && eslint cypress.config.js --fix",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx cypress run",
     "browser:chrome": "npx cypress run --browser chrome --reporter mocha-allure-reporter",
     "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report"
   },
