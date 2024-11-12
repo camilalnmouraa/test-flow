@@ -17,11 +17,11 @@ export default [
       cypress: cypressPlugin,
     },
     rules: {
-      'cypress/no-unnecessary-waiting': 'error', // Evita o uso desnecessário de cy.wait()
-      'cypress/assertion-before-screenshot': 'error', // Garante asserções antes de screenshots
-      'cypress/no-pause': 'error', // Impede o uso de cy.pause()
-      'cypress/no-assigning-return-values': 'error', // Evita atribuir retornos do Cypress a variáveis
-      'cypress/no-async-tests': 'error', // Impede o uso de funções assíncronas nos testes
+      'cypress/no-unnecessary-waiting': 'error', //evita o uso desnecessário de cy.wait()
+      'cypress/assertion-before-screenshot': 'error', //garante asserções antes de screenshots
+      'cypress/no-pause': 'error', //impede o uso de cy.pause()
+      'cypress/no-assigning-return-values': 'error', //evita atribuir retornos do Cypress a variáveis
+      'cypress/no-async-tests': 'error', //impede o uso de funções assíncronas nos testes
 
       // Regras gerais de boas práticas
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
@@ -29,9 +29,11 @@ export default [
       'consistent-return': 'error',
       'no-else-return': 'error',
       'no-empty-function': 'error',
-      'no-magic-numbers': ['warn', { ignore: [0, 1] }],
       'prefer-const': 'error',
       eqeqeq: 'error',
+      indent: ['error', 2],
+      quotes: ['error', 'single'],
+      semi: ['error', 'always'],
     },
   },
 ];
