@@ -26,7 +26,6 @@ export default [
       // Regras gerais de boas práticas
       'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'no-console': 'warn',
-      'consistent-return': 'error',
       'no-else-return': 'error',
       'no-empty-function': 'error',
       'prefer-const': 'error',

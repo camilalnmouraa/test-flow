@@ -1,4 +1,4 @@
-name: Cypress Tests with Allure Report
+name: Cypress Tests
 
 on:
   push:
@@ -10,24 +10,64 @@ on:
       - main
 
 jobs:
-  cypress-tests:
+  install_and_cache_dependencies:
     runs-on: ubuntu-latest
-    env:
-      JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
-      CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
-
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v3
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@v2
         with:
-          node-version: '18'
-
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-
       - name: Install dependencies
-        run: npm install
-      
-      - name: Run Cypress Tests
+        run: npm ci
+      - name: Save node_modules to cache
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+
+  eslint:
+    needs: install_and_cache_dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Restore node_modules cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - name: Install dependencies
+        run: npm ci
+      - name: Run ESLint
+        run: npx eslint 'cypress/**/*.js' '*.js'
+
+  cypress-tests:
+    needs: eslint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        config:
+          - { name: desktop, width: 1280, height: 720, browser: chrome }
+          - { name: ipad, width: 768, height: 1024, browser: chrome }
+          - { name: iphone, width: 375, height: 667, browser: chrome }
+    steps:
+      - uses: actions/checkout@v3
+      - name: Restore node_modules cache
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Cypress Tests for ${{ matrix.config.name }} on ${{ matrix.config.browser }}
         run: |
-          npx cypress run
+          npx cypress run --browser ${{ matrix.config.browser }} --config viewportWidth=${{ matrix.config.width }},viewportHeight=${{ matrix.config.height }}
