@@ -1,1 +1,1 @@
-import './registro';
+import '../support/registro';

@@ -28,11 +28,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Allure Report
-        run: |
-          npm install --save-dev mocha-allure-reporter allure-commandline
-          mkdir -p allure-results
-
       - name: Run Cypress Tests
         run: |
           npx cypress run 
