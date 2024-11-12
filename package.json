@@ -10,7 +10,7 @@
     "test:tablet": "npx cypress run --config viewportWidth=768,viewportHeight=1024",
     "test:mobile": "npx cypress run --config viewportWidth=375,viewportHeight=667",
     "browser:chrome": "npx cypress run --browser chrome --reporter mocha-allure-reporter",
-    "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report",
+    "test:allure": "npx cypress run --env allure=true && allure generate allure-results --clean -o allure-report && allure open allure-report",
     "cy:open": "npx cypress open",
     "cy:open:tablet": "npx cypress open --config viewportWidth=768,viewportHeight=1024",
     "cy:open:mobile": "npx cypress open --config viewportWidth=375,viewportHeight=667"

@@ -43,3 +43,11 @@ jobs:
       - name: Run Cypress Tests for ${{ matrix.config.name }} on ${{ matrix.config.browser }}
         run: |
           npx cypress run --browser ${{ matrix.config.browser }} --config viewportWidth=${{ matrix.config.width }},viewportHeight=${{ matrix.config.height }}
+      - name: Upload Cypress Artifacts
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: cypress-artifacts-${{ matrix.config.name }}
+          path: |
+            cypress/screenshots
+            cypress/videos
