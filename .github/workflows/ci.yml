@@ -35,7 +35,7 @@ jobs:
 
       - name: Run Cypress Tests
         run: |
-          npx cypress run
+          npx cypress run --reporter mocha-allure-reporter
 
           - name: Generate Allure Report
           run: |
