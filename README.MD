@@ -25,7 +25,9 @@ Execute  `npm test` para rodar os testes automatizados.
 > Após rodar os testes, o resultado esperado deve ser semelhante a este:
 
 ```sh
+
   Carrinho de Compras - Cupons de Desconto
+
     √ Aplicar o cupom de desconto 10OFF e verificar o desconto aplicado (18584ms)
     √ Aplicar o cupom de desconto FRETEGRATIS e verificar o desconto aplicado (14675ms)
     √ Aplicar o cupom inválido 20LIMITADO e verificar a mensagem de erro (11185ms)
@@ -34,16 +36,19 @@ Execute  `npm test` para rodar os testes automatizados.
 
 
   5 passing (1m)
+
 ```
 
 ## Relatório de Testes Automatizados
 
+
 ![Allure Report](cypress/fixtures/allure.png)
+
 
 
 ## Pipeline de Testes Automatizados
 
-[`GitHub Actions](.github/workflows/ci.yml)
+
 
 ![Pipeline](cypress/fixtures/githubactions.png)
 
