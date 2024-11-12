@@ -19,8 +19,6 @@ export default defineConfig({
       });
     },
     baseUrl: 'https://qastoredesafio.lojaintegrada.com.br/',
-    viewportWidth: 1920,
-    viewportHeight: 1080,
     defaultCommandTimeout: 10000,
     retries: {
       runMode: 1,

@@ -7,8 +7,13 @@
     "lint": "eslint cypress/**/*.js && eslint cypress.config.js",
     "lint:fix": "eslint cypress/**/*.js --fix && eslint cypress.config.js --fix",
     "test": "npx cypress run",
+    "test:tablet": "npx cypress run --config viewportWidth=768,viewportHeight=1024",
+    "test:mobile": "npx cypress run --config viewportWidth=375,viewportHeight=667",
     "browser:chrome": "npx cypress run --browser chrome --reporter mocha-allure-reporter",
-    "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report"
+    "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report",
+    "cy:open": "npx cypress open",
+    "cy:open:tablet": "npx cypress open --config viewportWidth=768,viewportHeight=1024",
+    "cy:open:mobile": "npx cypress open --config viewportWidth=375,viewportHeight=667"
   },
   "keywords": [],
   "author": "Camila Moura <moura.camilaluiza@gmail.com>",
