@@ -1,6 +1,6 @@
 # Carrinho de Compras com Cupons de Desconto
 
-Projeto de automação para a funcionalidade de [`aplicação de cupons de desconto`](./index.js) no carrinho de compras, que:
+Projeto de automação para a funcionalidade de [`aplicação de cupons de desconto`](cypress/e2e/cupom-desconto.cy.js) no carrinho de compras, que:
 
 - Aceita um cupom válido de desconto como entrada.
 - Calcula o valor total da compra aplicando o desconto correspondente.
@@ -38,10 +38,14 @@ Execute  `npm test` para rodar os testes automatizados.
 
 ## Relatório de Testes Automatizados
 
+![Allure Report](cypress/fixtures/allure.png)
 
 
 ## Pipeline de Testes Automatizados
 
+[`GitHub Actions](.github/workflows/ci.yml)
+
+![Pipeline](cypress/fixtures/githubactions.png)
 
 ___
 
