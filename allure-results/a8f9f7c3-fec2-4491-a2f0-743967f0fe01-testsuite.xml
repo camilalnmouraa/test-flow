@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1731435715166' stop='1731435751202'>
+    <name>Carrinho de Compras - Cupons de Desconto</name>
+    <title>Carrinho de Compras - Cupons de Desconto</title>
+    <test-cases>
+        <test-case start='1731435715166' status='passed' stop='1731435734874'>
+            <name>Aplicar o cupom de desconto 10OFF e verificar o desconto aplicado</name>
+            <title>Aplicar o cupom de desconto 10OFF e verificar o desconto aplicado</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1731435734923' status='failed' stop='1731435751130'>
+            <name>Aplicar o cupom de desconto FRETEGRATIS e verificar o desconto aplicado</name>
+            <title>Aplicar o cupom de desconto FRETEGRATIS e verificar o desconto aplicado</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timed out retrying after 10160ms: expected '' to equal '08972629480'
+                
+                Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Carrinho de Compras - Cupon...`</message>
+                <stack-trace>AssertionError: Timed out retrying after 10160ms: expected '' to equal '08972629480'
+                
+                Because this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Carrinho de Compras - Cupon...`
+                    at Context.eval (webpack://test-flow-website-cypress/./cypress/utils/helpers.js:23:47)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
