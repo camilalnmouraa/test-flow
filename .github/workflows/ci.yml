@@ -35,9 +35,10 @@ jobs:
 
       - name: Run Cypress Tests
         run: |
-          npx cypress run --browser chrome --reporter mocha-allure-reporter
+          npx cypress run --browser chrome --headless --reporter mocha-allure-reporter --no-sandbox
         env:
           NODE_OPTIONS: "--max-old-space-size=4096"
+          TERM: xterm
 
       - name: Generate Allure Report
         run: |
