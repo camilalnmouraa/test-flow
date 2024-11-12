@@ -13,6 +13,7 @@ jobs:
   cypress-tests:
     runs-on: ubuntu-latest
     env:
+      CYPRESS_SENHA: ${{ secrets.CYPRESS_SENHA }}
       JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
       CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
 
