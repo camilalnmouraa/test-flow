@@ -10,19 +10,44 @@ Projeto de automação para a funcionalidade de [`aplicação de cupons de desco
 
 ## Pré-requisitos
 
-É necessário ter o Node.js e o npm instalados para executar este projeto.
+Para clonar e executar este projeto, você precisará de:
 
-> Neste projeto foram utilizadas as versões `v20.14.0` para o Node.js e `10.7.0` para o npm. Recomenda-se o uso das mesmas ou versões mais recentes.
+- [git](https://git-scm.com/downloads) (usei a versão `2.45.2` ao escrever este documento)
+- [Node.js](https://nodejs.org/en/) (usei a versão `v20.14.0` ao escrever este documento)
+- npm (usei a versão `10.7.0` ao escrever este documento)
+
+**Observação:** Ao instalar o Node.js, o npm é instalado automaticamente. 🚀
 
 ## Instalação
 
-Execute `npm install` to install the dev dependencies.
+Para instalar as dependências de desenvolvimento, execute `npm install` (ou `npm i` para abreviar.)
 
-## Testes
+## Configurando as variáveis ​​de ambiente
 
-Execute  `npm test` para rodar os testes automatizados.
+Antes de executar os testes, a variável ​​de ambiente precisa ser configurada.
+
+Faça uma cópia do arquivo [`cypress.env.example.json`](./cypress.env.example.json) como `cypress.env.json` e defina o valor da variável.
+
+**Observação:** O arquivo `cypress.env.json` não é rastreado pelo git, pois está listado no arquivo `.gitignore`.
+
+## Executando os testes
+
+Neste projeto, você pode executar testes nos modos interativo e headless, tanto em viewports de desktop quanto de iphone.
+
+### Modo headless
+
+Execute `npm test` (ou `npm t` para abreviar) para executar todos os testes no modo headless usando uma viewport de desktop.
+
+Execute `npm run test:tablet` para executar os testes apropriados no modo headless usando uma viewport de iphone.
+
+### Modo interativo
+
+Execute `npm run cy:open` para abrir o **Cypress App** para executar testes no modo interativo usando uma viewport de desktop.
+
+Execute `npm run cy:open:tablet` para abrir o **Cypress App** para executar testes no modo interativo usando uma viewport de tablet.
 
 > Após rodar os testes, o resultado esperado deve ser semelhante a este:
+
 
 ```sh
 
