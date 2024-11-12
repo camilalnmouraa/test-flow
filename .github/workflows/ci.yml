@@ -27,7 +27,31 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+      
+      - name: Install Allure Report
+        run: |
+          npm install --save-dev mocha-allure-reporter allure-commandline
+          mkdir -p allure-results
 
       - name: Run Cypress Tests
         run: |
-          npx cypress run 
+          npx cypress run
+
+          - name: Generate Allure Report
+          run: |
+            allure generate allure-results --clean -o allure-report
+            allure open allure-report
+  
+      - name: Upload Allure Report as Artifact
+        uses: actions/upload-artifact@v3
+        with:
+            name: allure-report
+            path: allure-report
+  
+      - name: Publish Allure Report to GitHub Pages
+        if: success()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: allure-report
+            publish_branch: gh-pages
