@@ -25,22 +25,23 @@ Execute  `npm test` para rodar os testes automatizados.
 > Após rodar os testes, o resultado esperado deve ser semelhante a este:
 
 ```sh
-> javascript
+  Carrinho de Compras - Cupons de Desconto
+    √ Aplicar o cupom de desconto 10OFF e verificar o desconto aplicado (18584ms)
+    √ Aplicar o cupom de desconto FRETEGRATIS e verificar o desconto aplicado (14675ms)
+    √ Aplicar o cupom inválido 20LIMITADO e verificar a mensagem de erro (11185ms)
+    √ Aplicar o cupom inválido FAIELD e verificar a mensagem de erro (12390ms)
+    √ Aplicar o cupom inválido CUPOMVENCIDO e verificar a mensagem de erro (13059ms)
 
-  aplicaçãoDeCupons
-    ✔ deve retornar o valor correto com o cupom de 30 reais aplicado
-    ✔ deve retornar o valor correto com o cupom de 10% de desconto aplicado
-    ✔ deve retornar o valor correto com o cupom de frete grátis aplicado
 
-  3 passing (7ms)
+  5 passing (1m)
 ```
 
-## Cenário Automatizado Inicial
+## Relatório de Testes Automatizados
 
-O primeiro cenário de teste automatizado, do tipo "outline", inclui a validação de cupons válidos existentes na base de dados. Os cupons testados serão:
-- 30REAIS: Aplica um desconto fixo de R$30,00
-- 10OFF: Aplica um desconto de 10% sobre o valor total da compra
-- FRETEGRATIS: Elimina o custo do frete na compra
+
+
+## Pipeline de Testes Automatizados
+
 
 ___
 
