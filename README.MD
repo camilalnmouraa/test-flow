@@ -79,4 +79,4 @@ Execute `npm run cy:open:tablet` para abrir o **Cypress App** para executar test
 
 ___
 
-This project was created with 🤍 and ☕ by Camila Moura. by [Camila Moura](https://linkedin.com/in/camilalnmoura).
+This project was created with 🤍 and ☕ by [Camila Moura](https://linkedin.com/in/camilalnmoura).
